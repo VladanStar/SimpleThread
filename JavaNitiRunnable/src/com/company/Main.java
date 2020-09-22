@@ -22,6 +22,14 @@ public class Main {
         long kraj = System.currentTimeMillis();
         System.out.println(kraj);
         long vremeIzvrsavanja = kraj - pocetak;
+        try {
+            nit1.join();
+            nit.join();
+            nit2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println("Vreme izvrsavanja " + vremeIzvrsavanja);
     }
 }
